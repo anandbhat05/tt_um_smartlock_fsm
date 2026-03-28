@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+The Smart Lock is implemented using a Finite State Machine (FSM) that detects a predefined binary password (e.g., 1011). Each input bit moves the system through states. If the correct sequence is entered, the FSM reaches the unlock state and asserts the unlock signal. Any incorrect input resets or redirects the state progression.
 
 ## How to test
 
-Explain how to use your project
+To test the design, first apply a reset signal to initialize the FSM. Then, provide input bits sequentially (in) on each clock cycle and observe the output. When the correct sequence is entered, the unlock signal should go high. For incorrect sequences, the system should remain locked and reset or transition accordingly. Multiple input combinations and edge cases can be verified using a testbench.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware required.
