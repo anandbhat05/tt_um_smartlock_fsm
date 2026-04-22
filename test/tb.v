@@ -26,7 +26,7 @@ module tb ();
 `endif
 
   // Instantiate YOUR module (changed name here)
-  tt_um_smart_lock user_project (
+  tt_um_smart_lock (
 
 `ifdef GL_TEST
       .VPWR(VPWR),
