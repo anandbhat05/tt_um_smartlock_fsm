@@ -34,7 +34,16 @@ async def test_project(dut):
 
     # The following assersion is just an example of how to check the output values.
     # Change it to match the actual expected output of your module:
-    assert dut.uo_out.value == 50
+    # Example: simulate sequence 101
+
+dut.ui_in.value = 1
+await ClockCycles(dut.clk, 1)
+
+dut.ui_in.value = 0
+await ClockCycles(dut.clk, 1)
+
+# check unlock bit
+assert dut.uo_out.value & 1 == 1
 
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.
